@@ -1,0 +1,95 @@
+.menu__item--center {
+    text-align: center;
+}
+
+.features__item {
+    padding: 0 2.5em;
+    position: relative;
+}
+
+.features__img {
+    width: 100%;
+    height: auto;
+}
+
+%arrows {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    top: 50%;
+    margin-top: -2.5em;
+}
+
+.features__prev {
+    @extend %arrows;
+    left: -2em;
+    background: url(../img/ImageArrows/BlueL.png) center center no-repeat;
+    background-size: contain;
+}
+
+.features__next {
+    @extend %arrows;
+    right: -2em;
+    background: url(../img/ImageArrows/BlueR.png) center center no-repeat;
+    background-size: contain;
+}
+
+.features__button {
+    @extend %button;
+    background: $green;
+}
+
+.addTask__title {
+    background: $lightPink;
+}
+
+.addTask__chooseChild {
+    background: $lightPink;
+    color: white;
+    padding: 1em $sidePadding;
+}
+
+.chooseChild__item {
+    width: 49%;
+    display: inline-block;
+    padding: 0 1em;
+    @include box-sizing;
+}
+
+.chooseChild__avatar {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.chooseChild__current {
+    border: 3px $pink solid;
+}
+
+.addTask__rangeHolder {
+    @include clearFix;
+    margin: 3em 0 2em;
+    
+    label {
+        float: left;
+        width: 25%;
+        text-align: left;
+        line-height: 1;
+    }
+    
+    input[type="range"] {
+        float: right;
+        width: 73%; // magic number
+        padding: 0;
+        height: 1em;
+        
+    }
+    
+    ::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: transparent url(../img/pointsbar_handle.png) center center no-repeat;
+        background-size: contain;
+        width: 35px;
+        height: 40px;
+    }
+}

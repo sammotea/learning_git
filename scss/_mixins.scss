@@ -1,0 +1,57 @@
+@mixin visuallyHidden {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0;
+}
+
+@mixin clearFix {
+    position: relative;
+    
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+    -webkit-transform : translate3d($x, $y, $z);
+    -moz-transform : translate3d($x, $y, $z);
+    -ms-transform : translate3d($x, $y, $z);
+    -o-transform : translate3d($x, $y, $z);
+    transform : translate3d($x, $y, $z); 
+}
+
+@mixin rotate($deg) {
+    -webkit-transform : rotate($deg);
+    -moz-transform : rotate($deg);
+    -ms-transform : rotate($deg);
+    -o-transform : rotate($deg);
+    transform : rotate($deg); 
+}
+
+@mixin scale($ratio) {
+    -webkit-transform : scale($ratio);
+    -moz-transform : scale($ratio);
+    -ms-transform : scale($ratio);
+    -o-transform : scale($ratio);
+    transform : scale($ratio); 
+}
+
+@mixin transition($transition...) {
+    -webkit-transition : $transition;
+    transition : $transition; 
+}
+
+@mixin box-shadow( $shadow... ) {
+    -webkit-box-shadow : $shadow;
+    -moz-box-shadow : $shadow;
+    box-shadow : $shadow; 
+}
+
+@mixin box-sizing() {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}

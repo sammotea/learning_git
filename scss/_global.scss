@@ -1,0 +1,420 @@
+/* NEEDS ORGANISING INTO SEPARATE FILES */
+
+body.hasTitle {
+    padding-top: 3em;
+}
+
+.hasFooter .preNavSpaceHack {
+    height: 4em;
+}
+
+.title--top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    background: $blue;
+    text-transform: lowercase;
+    z-index: 10;
+    
+    h1 {
+        line-height: 3;
+    }
+}
+
+%title__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+    height: 100%;
+    display: block;
+}
+
+.title__outLink {
+    @extend %title__link;
+    right: 0;
+    
+    .parent__toDo &,
+    .parent__done & {
+        background: url(../img/AddTask_Icon.png) center center no-repeat;
+        background-size: 2em 2em;
+    }
+    
+    .parent__rewards & {
+        background: url(../img/AddRewardIcon_Icon.png) center center no-repeat;
+        background-size: 2em 2em;
+    }
+}
+
+.title__backLink {
+    @extend %title__link;
+    left: 0;
+    background: url(../img/BackIcon.png) center center no-repeat;
+    background-size: 2em 2em;
+}
+
+.nav--primary {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: .5em 0 .25em;
+    border-top: 1px $light solid;
+    background: $superlight;
+    z-index: 10;
+}
+
+.nav--primary__listItem {
+    display: inline-block;
+    width: 24%; // magic number
+}
+
+.nav__link--toDo {
+    background: url(../img/To-do01.png) top center no-repeat;
+    
+    &.nav--primary--current {
+        background-image: url(../img/To-do02.png);
+    }
+}
+
+.nav__link--done {
+    background: url(../img/Done01.png) top center no-repeat;
+    
+    &.nav--primary--current {
+        background-image: url(../img/Done02.png);
+    }
+}
+
+.nav__link--rewards {
+    background: url(../img/Reward01.png) top center no-repeat;
+    
+    &.nav--primary--current {
+        background-image: url(../img/Reward02.png);
+    }
+}
+
+.nav__link--more {
+    background: url(../img/More01.png) top center no-repeat;
+    
+    &.nav--primary--current {
+        background-image: url(../img/More02.png);
+    }
+}
+
+.nav--primary__link {
+    font-size: $omega;
+    color: $mid;
+    text-transform: lowercase;
+    display: block;
+    padding-top: 2.75em;
+    background-size: 2.75em 2.75em;
+    line-height: 1;
+}
+
+
+.parent__childOverview {
+    height: 14em;
+    background: url(../img/stockKid.jpg) center bottom no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.parent__childOverview__banner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .35);
+    color: white;
+    padding: .5em $sidePadding;
+}
+
+.parent__childOverview__item {
+    display: inline-block;
+    float: right;
+    line-height: 1.5;
+    font-size: $bravo;
+    
+    + .parent__childOverview__item {
+        margin-left: .25em;
+    }
+    
+    + .parent__childOverview__totalPoints {
+        margin-left: .75em;
+    }
+}
+
+.parent__childOverview__childName {
+    float: left;
+}
+
+.parent__childOverview__task--toDo {
+    background: url(../img/To-do_small.png) left center no-repeat;
+}
+
+.parent__childOverview__task--complete {
+    background: url(../img/done_small.png) left center no-repeat;
+}
+
+.parent__childOverview__tasks {
+    background-size: 1.5em 1.5em;
+    padding-left: 1.5em;
+}
+
+.child__childOverview {
+    @include clearFix;
+    padding: $sidePadding;
+    color: white;
+    text-align: right;
+    
+    .child__toDo & {
+        background: $pink;
+    }
+    
+    .child__done & {
+        background: $green;
+    }
+    
+    .child__rewards & {
+        background: $orange;
+    }
+}
+
+
+.child__childOverview__avatar {
+    float: left;
+    height: ($bravo) + (1.5*$delta) + (2*$alpha);
+    width: auto;
+    border-radius: 50%;
+}
+
+.child__childOverview__childName {
+    font-size: $bravo;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.child__childOverview__points {
+    font-size: $delta;
+    font-weight: bold;
+    display: block;
+    line-height: 1.5;
+}
+
+%child__childOverview__count {
+    display: inline-block;
+    line-height: 2;
+    padding-left: 2em;}
+
+.child__childOverview__tasks {
+    @extend %child__childOverview__count;
+    background: url(../img/To-do_small_Kids.png) left center no-repeat;
+    background-size: 2em;
+}
+
+.child__childOverview__completedTasks {
+    @extend %child__childOverview__count;
+    background: url(../img/done_small_Kids.png) left center no-repeat;
+    background-size: 2em;
+}
+
+.viewContent {
+    padding: $sidePadding;
+    padding-bottom: 0;
+}
+
+.content__nested + .content__nested {
+    margin-top: 3em;
+}
+
+.header--section {
+    text-transform: lowercase;
+    border-bottom: 1px $mid solid;
+    padding-bottom: .5em;
+    color: $dark;
+}
+
+.taskList {
+    list-style: none;
+    text-transform: lowercase;
+}
+
+.taskList__item {
+    padding: 1.25em 0;
+    border-bottom: 1px $mid dotted;
+    @include clearFix;
+}
+
+%taskList__item__child {
+    float: left;
+    display: inline-block;
+}
+
+%taskList__task {
+    @extend %taskList__item__child
+}
+
+.taskList__task {
+    @extend %taskList__task;
+    width: 50%;
+}
+.taskList__task--lg {
+    @extend %taskList__task;
+    width: 75%;
+}
+
+.taskList__task--full {
+    width: 100%; 
+}
+
+.taskList__pointValue {
+    @extend %taskList__item__child;
+
+    span {
+        font-size: $omega;
+    }
+}
+
+.taskList__rewards {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -1em;
+    background: url(../img/Reward02.png) right center no-repeat;
+    background-size: contain;
+    font-size: $bravo;
+    line-height: 2;
+    padding-right: 2.25em;
+    color: $blue;
+}
+
+.taskList__action {
+    @extend %taskList__item__child;
+    width: 2em;
+    height: 2em;
+    margin-top: -.25em; // other items  = 1.5em;
+    float: right;
+    
+    + .taskList__action {
+        margin-right: .5em;
+    }
+}
+
+.taskList__action--approve {
+    background: url(../img/approve.png) center center no-repeat;
+    background-size: contain;
+}
+
+.taskList__action--reject {
+    background: url(../img/reject.png) center center no-repeat;
+    background-size: contain;
+}
+
+.taskList__pointValue--standAlone {
+    @extend %taskList__item__child;
+    width: 25%;
+    font-size: $charlie;
+    text-align: right;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    
+    span {
+        display: inline-block;
+        font-size: $omega / $charlie-n;
+    }
+}
+
+%taskList__pointValue--decorative {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.25em;
+    right: 0;
+    border-radius: 50%;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 1.75;
+    text-align: center;
+    
+    span {
+        display: block;
+        font-size: $omega;
+        line-height: 1;
+        margin-top: -.5em;
+    }
+}
+
+.taskList__pointValue--decorative {
+    @extend %taskList__pointValue--decorative;
+    background: $pink;
+    color: white;
+    
+    .incomplete & {
+        background-color: $green;
+    }
+}
+
+.taskList__pointValue--decorative--hollow {
+    @extend %taskList__pointValue--decorative;
+    color: $pink;
+    border:2px $pink solid;
+}
+
+%progress {
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 1em;
+    width: 100%;
+    background-color: $lightgrey;
+    
+    &::-webkit-progress-bar {
+        border-radius: 10px;
+        background-color: $lightgrey;
+    }
+    
+    &::-webkit-progress-value {
+        border-radius: 9px;
+        height: 1em;
+    }
+}
+
+.progress--reward {
+    @extend %progress;
+    &::-webkit-progress-value {
+        background-color: $blue;
+    }
+}
+
+%button {
+    display: inline-block;
+    line-height: 1;
+    padding: 1em 2em;
+    color: white;
+    border-radius: 10px;
+    background: $green;
+    width: auto;
+}
+
+.button--lg {
+    @extend %button;
+    width: 80%;
+}
+
+.button {
+    @extend %button;
+}
+
+.img--standAlone {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}

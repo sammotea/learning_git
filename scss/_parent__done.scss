@@ -1,0 +1,16 @@
+.done__title {
+    background: $green;
+}
+
+.taskList--done {
+
+    .taskList__task--lg {
+    text-decoration: line-through;
+    color: $light;
+    }
+    
+    .incomplete .taskList__task--lg {
+        text-decoration: none;
+        color: $mid;
+    }
+}

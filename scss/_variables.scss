@@ -1,0 +1,43 @@
+$sidePadding : 1em;
+/* Variables =================================================== */
+
+$basefont : "garamond-premier-pro",serif;
+$altfont : "garamond-premier-pro-display",sans-serif;
+
+
+// Colours
+
+$pink : rgb(255, 12, 134);
+$lightPink : lighten($pink, 25%);
+$green : #37D491;
+$orange : #FBB33C;
+$blue : #4395CB;
+$lightgrey : #d7d7d7;
+
+
+$dark : #666;
+$mid : #AAA;
+$light : #CACACA;
+$superlight : rgb(252,252,252);
+
+// Spacing
+
+$space : 1.5em;
+$r-space : 1.5rem;
+
+$borderThickness : .15rem;
+// Typography
+
+/* We're using a modular scale based around a 22px body and 48px important number, set at 1: 1.618 */
+
+$omega: .8em;
+$alpha: 1em;
+$bravo: 1.2em;
+$charlie: 1.5em;
+$delta: 2.6em;
+
+$omega-n: .8;
+$alpha-n: 1;
+$bravo-n: 1.2;
+$charlie-n: 1.5;
+$delta-n: 2.6;

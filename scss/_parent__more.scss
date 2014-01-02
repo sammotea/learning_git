@@ -1,0 +1,48 @@
+.more__title {
+    background: $blue;
+}
+
+.list--morePage {
+    list-style: none;
+    padding: $sidePadding 0 0 $sidePadding;
+}
+
+.moreList__item {
+    padding-left: 2.5em;
+}
+
+.moreList__link {
+    display: block;
+    padding: .5em 0;
+    border-bottom: 1px $light dotted;   
+}
+
+.moreList--addMember {
+    background: url(../img/moreicons/MainButtonIcons/Add01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
+
+.moreList--tour {
+    background: url(../img/moreicons/MainButtonIcons/tour01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
+
+.moreList--requestFeatures {
+    background: url(../img/moreicons/MainButtonIcons/RequestNew01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
+
+.moreList--privacyPolicy {
+    background: url(../img/moreicons/MainButtonIcons/Add01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
+
+.moreList--terms {
+    background: url(../img/moreicons/MainButtonIcons/Terms01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
+
+.moreList--logOut {
+    background: url(../img/moreicons/MainButtonIcons/Logout01.png) left center no-repeat;
+    background-size: 1.75em 1.75em;
+}
